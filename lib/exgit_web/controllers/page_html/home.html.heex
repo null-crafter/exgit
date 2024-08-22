@@ -1,0 +1,6 @@
+<.flash_group flash={@flash} />
+<div>
+  <%= for name <- Exgit.git_repo_names() do %>
+  <p><%= name %></p>
+  <% end %>
+</div>
