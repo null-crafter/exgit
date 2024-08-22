@@ -52,13 +52,13 @@ defmodule Exgit.Util.Git do
         |> Enum.map(&ls_git_dirs/1)
         |> List.insert_at(0, path)
         |> List.flatten
+        |> Enum.filter(&git?/1)
     end
   end
   def walk(path) do
     path
     |> Path.expand
     |> ls_git_dirs()
-    |> Enum.filter(&git?/1)
   end
 
 end
